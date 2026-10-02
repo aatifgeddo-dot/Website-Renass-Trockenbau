@@ -811,6 +811,30 @@
 
             font-size: 13px;
         }
+        /* =========================
+   SCROLL ANIMATION
+========================= */
+
+.service,
+.step,
+.contact-card,
+form,
+.about-box,
+.section-title {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.service.show,
+.step.show,
+.contact-card.show,
+form.show,
+.about-box.show,
+.section-title.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
         /* =========================
            MOBILE
