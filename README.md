@@ -1,4 +1,4 @@
-aatifgeddo-dot/renass-trockenbau
+aatifgeddo-dot.githubio/renass-trockenbau
 # Website-Renass-Trockenbau
  
 Hier Finden Sie alle Informationen zu Unseren Projekten und Leistungen (https://github.com)
