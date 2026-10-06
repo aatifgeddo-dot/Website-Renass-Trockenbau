@@ -1749,57 +1749,994 @@
 
 <script>
 
-function openMenu() {
+/* =====================================================
+   RENASS TROCKENBAU
+   NAVIGATION + CUSTOMER INTERACTION
+   ===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =================================================
+       CONTACT INFORMATION
+    ================================================= */
+
+    const PHONE = "+4917630699702";
+    const EMAIL = "aatifgeddo@gmail.com";
+
+    const ADDRESS =
+        "Kiefernpfad 9, 30657 Hannover, Niedersachsen, Deutschland";
+
+
+    /* =================================================
+       MOBILE MENU
+    ================================================= */
+
+    const menu = document.getElementById("menu");
+    const menuButton = document.querySelector(".menu-button");
+
+    window.openMenu = function () {
+
+        if (!menu) return;
+
+        menu.classList.toggle("open");
+
+        if (menu.classList.contains("open")) {
+
+            if (menuButton) {
+                menuButton.textContent = "✕";
+                menuButton.setAttribute(
+                    "aria-label",
+                    "Menü schließen"
+                );
+            }
+
+        } else {
+
+            if (menuButton) {
+                menuButton.textContent = "☰";
+                menuButton.setAttribute(
+                    "aria-label",
+                    "Menü öffnen"
+                );
+            }
+
+        }
+
+    };
+
+
+    /* =================================================
+       CLOSE MOBILE MENU AFTER NAVIGATION
+    ================================================= */
 
     document
-        .getElementById("menu")
-        .classList.toggle("open");
+        .querySelectorAll("#menu a")
+        .forEach(function (link) {
 
-}
+            link.addEventListener("click", function () {
 
+                if (menu) {
+                    menu.classList.remove("open");
+                }
 
-document
-    .getElementById("contactForm")
-    .addEventListener("submit", function(event) {
+                if (menuButton) {
+                    menuButton.textContent = "☰";
+                    menuButton.setAttribute(
+                        "aria-label",
+                        "Menü öffnen"
+                    );
+                }
 
-        event.preventDefault();
+            });
 
-        const name =
-            document.getElementById("name").value;
-
-        const phone =
-            document.getElementById("phone").value;
-
-        const email =
-            document.getElementById("email").value;
-
-        const message =
-            document.getElementById("message").value;
+        });
 
 
-        const subject =
-            encodeURIComponent(
-                "Projektanfrage – RENASS TROCKENBAU"
+    /* =================================================
+       SMOOTH NAVIGATION
+    ================================================= */
+
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(function (link) {
+
+            link.addEventListener("click", function (event) {
+
+                const targetID =
+                    this.getAttribute("href");
+
+                if (
+                    !targetID ||
+                    targetID === "#"
+                ) {
+                    return;
+                }
+
+                const target =
+                    document.querySelector(targetID);
+
+                if (!target) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            });
+
+        });
+
+
+    /* =================================================
+       FIX PHONE LINK
+    ================================================= */
+
+    document
+        .querySelectorAll('a[href^="tel:"]')
+        .forEach(function (link) {
+
+            link.href = "tel:" + PHONE;
+
+        });
+
+
+    /* =================================================
+       FIX EMAIL LINK
+    ================================================= */
+
+    document
+        .querySelectorAll(".contact-item a")
+        .forEach(function (link) {
+
+            if (
+                link.textContent
+                    .toLowerCase()
+                    .includes("@")
+            ) {
+
+                link.href =
+                    "mailto:" + EMAIL;
+
+            }
+
+        });
+
+
+    /* =================================================
+       INTERACTIVE CSS
+       Wird automatisch vom JavaScript hinzugefügt
+    ================================================= */
+
+    const style = document.createElement("style");
+
+    style.textContent = `
+
+        /* -------------------------------
+           SCROLL REVEAL
+        ------------------------------- */
+
+        .renass-reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(35px);
+
+            transition:
+                opacity .7s ease,
+                transform .7s ease;
+
+        }
+
+        .renass-reveal.show {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        /* -------------------------------
+           ACTIVE NAVIGATION
+        ------------------------------- */
+
+        nav a.active {
+
+            color:
+                var(--red) !important;
+
+        }
+
+
+        /* -------------------------------
+           FLOATING CONTACT BUTTONS
+        ------------------------------- */
+
+        .renass-contact-tools {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 85px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+
+            z-index: 5000;
+
+        }
+
+
+        .renass-contact-tools a {
+
+            width: 52px;
+
+            height: 52px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 50%;
+
+            color: white;
+
+            font-size: 21px;
+
+            box-shadow:
+                0 10px 25px
+                rgba(0,0,0,.20);
+
+            transition:
+                transform .25s ease;
+
+        }
+
+
+        .renass-contact-tools a:hover {
+
+            transform:
+                scale(1.12);
+
+        }
+
+
+        .renass-phone {
+
+            background:
+                var(--blue);
+
+        }
+
+
+        .renass-whatsapp {
+
+            background:
+                #25D366;
+
+        }
+
+
+        .renass-email {
+
+            background:
+                var(--red);
+
+        }
+
+
+        .renass-map {
+
+            background:
+                #475569;
+
+        }
+
+
+        /* -------------------------------
+           BACK TO TOP
+        ------------------------------- */
+
+        #renassBackTop {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 25px;
+
+            width: 52px;
+
+            height: 52px;
+
+            border: 0;
+
+            border-radius: 50%;
+
+            background:
+                var(--red);
+
+            color: white;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform:
+                translateY(15px);
+
+            transition: .3s ease;
+
+            z-index: 5000;
+
+            box-shadow:
+                0 10px 25px
+                rgba(0,0,0,.20);
+
+        }
+
+
+        #renassBackTop.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        /* -------------------------------
+           TOAST MESSAGE
+        ------------------------------- */
+
+        #renassToast {
+
+            position: fixed;
+
+            left: 50%;
+
+            bottom: 25px;
+
+            transform:
+                translate(-50%,100px);
+
+            background:
+                var(--blue);
+
+            color: white;
+
+            padding:
+                13px 20px;
+
+            border-radius: 12px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition: .35s ease;
+
+            z-index: 6000;
+
+            box-shadow:
+                0 15px 35px
+                rgba(0,0,0,.20);
+
+        }
+
+
+        #renassToast.show {
+
+            opacity: 1;
+
+            transform:
+                translate(-50%,0);
+
+        }
+
+
+        /* -------------------------------
+           SERVICE INTERACTION
+        ------------------------------- */
+
+        .service {
+
+            cursor: pointer;
+
+        }
+
+
+        /* -------------------------------
+           MOBILE
+        ------------------------------- */
+
+        @media(max-width:600px) {
+
+            .renass-contact-tools {
+
+                right: 12px;
+
+                bottom: 80px;
+
+            }
+
+
+            .renass-contact-tools a {
+
+                width: 46px;
+
+                height: 46px;
+
+                font-size: 18px;
+
+            }
+
+
+            #renassBackTop {
+
+                right: 12px;
+
+                bottom: 20px;
+
+                width: 46px;
+
+                height: 46px;
+
+            }
+
+        }
+
+    `;
+
+    document.head.appendChild(style);
+
+
+    /* =================================================
+       FLOATING CUSTOMER CONTACT TOOLS
+    ================================================= */
+
+    const contactTools =
+        document.createElement("div");
+
+    contactTools.className =
+        "renass-contact-tools";
+
+    contactTools.innerHTML = `
+
+        <a
+            class="renass-phone"
+            href="tel:${PHONE}"
+            title="RENASS TROCKENBAU anrufen"
+            aria-label="Telefon">
+
+            ☎
+
+        </a>
+
+
+        <a
+            class="renass-whatsapp"
+            href="https://wa.me/${PHONE.replace("+", "")}"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="WhatsApp"
+            aria-label="WhatsApp">
+
+            💬
+
+        </a>
+
+
+        <a
+            class="renass-email"
+            href="mailto:${EMAIL}"
+            title="E-Mail"
+            aria-label="E-Mail">
+
+            ✉
+
+        </a>
+
+
+        <a
+            class="renass-map"
+            href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Standort auf Google Maps"
+            aria-label="Standort">
+
+            📍
+
+        </a>
+
+    `;
+
+    document.body.appendChild(contactTools);
+
+
+    /* =================================================
+       BACK TO TOP BUTTON
+    ================================================= */
+
+    const backTop =
+        document.createElement("button");
+
+    backTop.id =
+        "renassBackTop";
+
+    backTop.type =
+        "button";
+
+    backTop.title =
+        "Nach oben";
+
+    backTop.setAttribute(
+        "aria-label",
+        "Nach oben"
+    );
+
+    backTop.textContent =
+        "↑";
+
+    document.body.appendChild(backTop);
+
+
+    /* =================================================
+       TOAST
+    ================================================= */
+
+    const toast =
+        document.createElement("div");
+
+    toast.id =
+        "renassToast";
+
+    document.body.appendChild(toast);
+
+
+    function showToast(message) {
+
+        toast.textContent =
+            message;
+
+        toast.classList.add("show");
+
+        setTimeout(function () {
+
+            toast.classList.remove("show");
+
+        }, 3000);
+
+    }
+
+
+    /* =================================================
+       BACK TO TOP
+    ================================================= */
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            if (window.scrollY > 500) {
+
+                backTop.classList.add("show");
+
+            } else {
+
+                backTop.classList.remove("show");
+
+            }
+
+        }
+    );
+
+
+    backTop.addEventListener(
+        "click",
+        function () {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+    );
+
+
+    /* =================================================
+       SCROLL REVEAL
+    ================================================= */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".service, .step, .contact-card, " +
+            "form, .section-title, .about-box, " +
+            ".stats, .hero-grid"
+        );
+
+
+    revealElements.forEach(
+        function (element) {
+
+            element.classList.add(
+                "renass-reveal"
             );
 
+        }
+    );
 
-        const body =
-            encodeURIComponent(
-                "Name: " + name +
-                "\nTelefon: " + phone +
-                "\nE-Mail: " + email +
-                "\n\nProjekt:\n" + message
+
+    const revealObserver =
+        new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(
+                    function (entry) {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "show"
+                            );
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach(
+        function (element) {
+
+            revealObserver.observe(
+                element
             );
 
+        }
+    );
 
-        window.location.href =
-            "mailto:info@renass-trockenbau.de" +
-            "?subject=" + subject +
-            "&body=" + body;
 
-    });
+    /* =================================================
+       ACTIVE NAVIGATION WHILE SCROLLING
+    ================================================= */
+
+    const sections =
+        document.querySelectorAll(
+            "main section[id]"
+        );
+
+
+    const navigationLinks =
+        document.querySelectorAll(
+            '#menu a[href^="#"]'
+        );
+
+
+    function updateNavigation() {
+
+        let current =
+            "start";
+
+
+        sections.forEach(
+            function (section) {
+
+                const top =
+                    section.offsetTop - 200;
+
+                if (
+                    window.scrollY >= top
+                ) {
+
+                    current =
+                        section.id;
+
+                }
+
+            }
+        );
+
+
+        navigationLinks.forEach(
+            function (link) {
+
+                link.classList.remove(
+                    "active"
+                );
+
+
+                if (
+                    link.getAttribute("href") ===
+                    "#" + current
+                ) {
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateNavigation
+    );
+
+
+    updateNavigation();
+
+
+    /* =================================================
+       SERVICE INTERACTION
+    ================================================= */
+
+    document
+        .querySelectorAll(".service")
+        .forEach(function (service) {
+
+            service.addEventListener(
+                "click",
+                function () {
+
+                    const title =
+                        service.querySelector("h3");
+
+
+                    if (!title) {
+                        return;
+                    }
+
+
+                    showToast(
+                        title.textContent +
+                        " – Anfrage möglich"
+                    );
+
+
+                    setTimeout(
+                        function () {
+
+                            const contact =
+                                document.getElementById(
+                                    "kontakt"
+                                );
+
+
+                            if (contact) {
+
+                                contact.scrollIntoView({
+                                    behavior:
+                                        "smooth"
+                                });
+
+                            }
+
+                        },
+                        900
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* =================================================
+       CONTACT FORM
+    ================================================= */
+
+    const form =
+        document.getElementById(
+            "contactForm"
+        );
+
+
+    if (form) {
+
+        form.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document
+                        .getElementById("name")
+                        .value
+                        .trim();
+
+
+                const phone =
+                    document
+                        .getElementById("phone")
+                        .value
+                        .trim();
+
+
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim();
+
+
+                const message =
+                    document
+                        .getElementById("message")
+                        .value
+                        .trim();
+
+
+                if (
+                    !name ||
+                    !email ||
+                    !message
+                ) {
+
+                    showToast(
+                        "Bitte Name, E-Mail und Nachricht ausfüllen."
+                    );
+
+                    return;
+
+                }
+
+
+                const subject =
+                    encodeURIComponent(
+                        "Projektanfrage – RENASS TROCKENBAU"
+                    );
+
+
+                const body =
+                    encodeURIComponent(
+
+                        "Hallo RENASS TROCKENBAU,\n\n" +
+
+                        "Name: " +
+                        name +
+                        "\n" +
+
+                        "Telefon: " +
+                        phone +
+                        "\n" +
+
+                        "E-Mail: " +
+                        email +
+                        "\n\n" +
+
+                        "Projekt / Nachricht:\n" +
+                        message
+
+                    );
+
+
+                showToast(
+                    "E-Mail wird vorbereitet..."
+                );
+
+
+                setTimeout(
+                    function () {
+
+                        window.location.href =
+                            "mailto:" +
+                            EMAIL +
+                            "?subject=" +
+                            subject +
+                            "&body=" +
+                            body;
+
+                    },
+                    500
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =================================================
+       ESC = CLOSE MENU
+    ================================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                if (menu) {
+
+                    menu.classList.remove(
+                        "open"
+                    );
+
+                }
+
+
+                if (menuButton) {
+
+                    menuButton.textContent =
+                        "☰";
+
+                }
+
+            }
+
+        }
+    );
+
+
+    /* =================================================
+       WELCOME MESSAGE
+    ================================================= */
+
+    setTimeout(
+        function () {
+
+            showToast(
+                "Willkommen bei RENASS TROCKENBAU"
+            );
+
+        },
+        1200
+    );
+
+});
 
 </script>
+
 
 </body>
 </html>
