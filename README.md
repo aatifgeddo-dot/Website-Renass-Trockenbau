@@ -32,9 +32,6 @@ Für Anfragen und weitere Informationen stehen wir Ihnen gerne zur Verfügung:
 ---
 
 ## 📄 Lizenz
-<div align="center">
-<img src="https://github.com" width="300" alt="RENASS Logo" />
-</div>
 
 ---
 
