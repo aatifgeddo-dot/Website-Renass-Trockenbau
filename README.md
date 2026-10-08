@@ -32,8 +32,29 @@ Für Anfragen und weitere Informationen stehen wir Ihnen gerne zur Verfügung:
 ---
 
 ## 📄 Lizenz
-Dieses Projekt ist Eigentum von **RENASS Meisterbetrieb**. Alle Rechte vorbehalten.
-## ⚖️ Rechtliches / Legal
-* **[Datenschutzerklärung (Datenschutz)](Datenschutz)** – Informationen zum Schutz Ihrer persönlichen Daten nach der DSGVO.
+<div align="center">
+<img src="https://github.com" width="300" alt="RENASS Logo" />
+</div>
 
+---
 
+# 🏗️ RENASS - Webentwicklung & Trockenbau / Web Development & Drywall
+
+## 🇩🇪 Deutsch
+Moin! Ich bin ein **Webentwicklungs-Einsteiger** und gleichzeitig unentwegt als **professioneller Trockenbauer** tätig.
+
+Hier auf GitHub lerne ich das Programmieren und verwalte meine Projekte. Mein Ziel ist es, meine handwerkliche Erfahrung im Trockenbau mit moderner Webtechnologie zu verbinden, um innovative Lösungen für die Baubranche zu entwickeln. Ich bin offen für den Austausch mit anderen Entwicklern, potenziellen Partnern oder Unternehmen!
+
+---
+
+## 🇬🇧 English
+Hello! I am a **web development beginner** and a **professional drywaller**.
+
+Here on GitHub, I am learning to code and managing my personal projects. My goal is to combine my hands-on experience in drywalling with modern web technologies to create innovative solutions for the construction industry. I am open to networking with other developers, potential co-founders, or companies!
+
+---
+
+## ⚖️ Datenschutz-Hinweis / Privacy Note
+Dies ist ein privates Lern-Repository. Die Datenverarbeitung (z.B. Server-Logfiles) erfolgt automatisch durch den Host dieser Plattform (**GitHub Inc.**). Ich selbst speichere oder sammle keine personenbezogenen Daten von Besuchern dieses Wikis.
+
+*This is a private learning repository. Data processing (e.g. server log files) is carried out automatically by the host of this platform (**GitHub Inc.**). I do not store or collect any personal data from visitors to this wiki.*
