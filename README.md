@@ -33,4 +33,7 @@ Für Anfragen und weitere Informationen stehen wir Ihnen gerne zur Verfügung:
 
 ## 📄 Lizenz
 Dieses Projekt ist Eigentum von **RENASS Meisterbetrieb**. Alle Rechte vorbehalten.
+## ⚖️ Rechtliches / Legal
+* **[Datenschutzerklärung (Datenschutz)](Datenschutz)** – Informationen zum Schutz Ihrer persönlichen Daten nach der DSGVO.
+
 
