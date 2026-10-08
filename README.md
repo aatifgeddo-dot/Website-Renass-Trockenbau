@@ -1,4 +1,4 @@
-
+ja
 <img width="1254" height="1254" alt="1000049249" src="https://github.com/user-attachments/assets/7338c681-6cd3-45bb-b1d5-c6744a4b155b" />
 Website Management – ​​RENASS DRY CONSTRUCTION
 Welcome to RENASS DRY CONSTRUCTION in Hannover.
@@ -12,7 +12,7 @@ https://github.com/aatifgeddo-dot/Website-Renass-Trockenbau
 
 Contact:
 Email: aatifgeddo@gmail.com
-Phone: 0176 30699702
+Phone: +49176 30699702
 Address:Kiefernpfad 9, 30657 Hannover
 © RENASS DRY CONSTRUCTION – All Richte vorbehalten.
 
