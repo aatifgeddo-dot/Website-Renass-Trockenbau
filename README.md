@@ -26,7 +26,7 @@ git clone https://github.com
 
 Für Anfragen und weitere Informationen stehen wir Ihnen gerne zur Verfügung:
 
-* **📱 Telefon / Mobil:** [+49 176 30699702](tel:+4917630699702) (oder `017630699702`)
+* **📱 Telefon / Mobil:** [+49 176 30699702](tel:+4917630699702) 
 * **📧 E-Mail:** [aatifgeddo@gmail.com](mailto:aatifgeddo@gmail.com)
 
 ---
