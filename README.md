@@ -46,7 +46,6 @@ Hier auf GitHub lerne ich das Programmieren und verwalte meine Projekte. Mein Zi
 
 ## 🇬🇧 English
 Hello! I am a **web development beginner** and a **professional drywaller**.
-
 Here on GitHub, I am learning to code and managing my personal projects. My goal is to combine my hands-on experience in drywalling with modern web technologies to create innovative solutions for the construction industry. I am open to networking with other developers, potential co-founders, or companies!
 
 ---
@@ -55,3 +54,4 @@ Here on GitHub, I am learning to code and managing my personal projects. My goal
 Dies ist ein privates Lern-Repository. Die Datenverarbeitung (z.B. Server-Logfiles) erfolgt automatisch durch den Host dieser Plattform (**GitHub Inc.**). Ich selbst speichere oder sammle keine personenbezogenen Daten von Besuchern dieses Wikis.
 
 *This is a private learning repository. Data processing (e.g. server log files) is carried out automatically by the host of this platform (**GitHub Inc.**). I do not store or collect any personal data from visitors to this wiki.*
+ GitHub | Impressum | Datenschutz
