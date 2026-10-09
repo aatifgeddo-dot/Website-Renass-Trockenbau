@@ -1,1 +1,18 @@
+from pathlib import Path
+import shutil, zipfile
+
+src_html = Path("/mnt/data/renass_trockenbau_website/index.html")
+src_logo = Path("/mnt/data/IMG_0707.PNG")
+out_dir = Path("/mnt/data/RENASS_TROCKENBAU_Website")
+out_dir.mkdir(exist_ok=True)
+html = src_html.read_text(encoding="utf-8")
+html = html.replace("logo-renass.jpeg", "logo-renass.png")
+(out_dir / "index.html").write_text(html, encoding="utf-8")
+shutil.copy2(src_logo, out_dir / "logo-renass.png")
+zip_path = Path("/mnt/data/RENASS_TROCKENBAU_Website_GitHub.zip")
+with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
+    z.write(out_dir / "index.html", "RENASS_TROCKENBAU/index.html")
+    z.write(out_dir / "logo-renass.png", "RENASS_TROCKENBAU/logo-renass.png")
+print("Ready: /mnt/data/RENASS_TROCKENBAU_Website_GitHub.zip")
+print("HTML: /mnt/data/RENASS_TROCKENBAU_Website/index.html")
 
