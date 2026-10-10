@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#174f9f">
+  <meta name="description" content="RENASS TROCKENBAU in Hannover: abgehängte Decken, Gipskarton, Trennwände, Malerarbeiten sowie Demontage und Montage.">
+  <title>RENASS TROCKENBAU | Hannover</title>
+  <style>
+    :root {
+      --red: #df0712;
+      --blue: #174f9f;
+      --deep-blue: #092d60;
+      --white: #fff;
+      --light: #f4f7fc;
+      --text: #17243a;
+      --muted: #64748b;
+      --border: #d9e3f1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    .container { width: min(1180px, 92%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-top: 8px solid var(--blue);
+      border-bottom: 4px solid var(--blue);
+      box-shadow: 0 5px 20px #092d6010;
+    }
+    .navbar {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      color: var(--red);
+      font-size: 27px;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: 1px;
+    }
+    .brand span {
+      display: block;
+      margin-top: 5px;
+      color: var(--blue);
+      font-size: 15px;
+      letter-spacing: 4px;
+    }
+    nav { display: flex; align-items: center; gap: 22px; }
+    nav a { color: var(--deep-blue); font-size: 14px; font-weight: 700; }
+    nav a:hover { color: var(--red); }
+    .menu-button {
+      display: none;
+      padding: 9px 13px;
+      border: 0;
+      border-radius: 4px;
+      background: var(--blue);
+      color: white;
+      font-size: 23px;
+      cursor: pointer;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border: 0;
+      border-radius: 4px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-red { background: var(--red); color: white; }
+    .btn-blue { background: var(--blue); color: white; }
+    .btn-white { background: white; color: var(--blue); border: 1px solid var(--border); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 64px 0 72px;
+      background-color: white;
+      background-image:
+        linear-gradient(#174f9f0c 1px, transparent 1px),
+        linear-gradient(90deg, #174f9f0c 1px, transparent 1px);
+      background-size: 35px 35px;
+      border-bottom: 10px solid var(--blue);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -130px;
+      right: -150px;
+      width: 310px;
+      height: 310px;
+      border: 22px solid #174f9f12;
+      transform: rotate(45deg);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      align-items: center;
+      gap: 38px;
+    }
+    .eyebrow {
+      margin-bottom: 16px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+    .hero h1 {
+      color: var(--red);
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 900;
+      line-height: 1.08;
+    }
+    .hero h1 span {
+      color: var(--blue);
+      font-size: .72em;
+      letter-spacing: 1px;
+    }
+    .hero-description {
+      max-width: 530px;
+      margin: 22px 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-location { margin-top: 20px; color: var(--blue); font-size: 13px; font-weight: 700; }
+    .logo-frame {
+      padding: 8px;
+      background: white;
+      border: 5px solid var(--blue);
+      outline: 2px solid #b7cce8;
+      outline-offset: 5px;
+      box-shadow: 0 18px 40px #092d6018;
+    }
+    .logo-frame img { display: block; width: 100%; height: auto; object-fit: contain; }
+
+    section:not(.hero) { padding: 76px 0; }
+    .section-heading { max-width: 720px; margin: 0 auto 40px; text-align: center; }
+    .section-heading h2 {
+      margin-bottom: 14px;
+      color: var(--deep-blue);
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.2;
+    }
+    .section-heading h2 span { color: var(--red); }
+    .section-heading p { color: var(--muted); }
+
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .service-card {
+      padding: 26px;
+      background: white;
+      border: 1px solid var(--border);
+      border-bottom: 5px solid var(--blue);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-bottom-color: var(--red);
+      box-shadow: 0 15px 35px #092d6012;
+    }
+    .service-icon {
+      display: grid;
+      width: 54px;
+      height: 54px;
+      margin-bottom: 16px;
+      place-items: center;
+      background: #eaf1fc;
+      color: var(--blue);
+      font-size: 27px;
+      font-weight: 900;
+    }
+    .service-card h3 { margin-bottom: 9px; color: var(--deep-blue); font-size: 19px; }
+    .service-card p { margin-bottom: 15px; color: var(--muted); font-size: 14px; }
+    .service-card a { color: var(--red); font-size: 13px; font-weight: 900; }
+
+    .quality {
+      color: white;
+      background: var(--deep-blue);
+      border-top: 8px solid var(--blue);
+      border-bottom: 8px solid var(--blue);
+    }
+    .quality .section-heading h2 { color: white; }
+    .quality .section-heading h2 span { color: #ff424b; }
+    .quality .section-heading p { color: #d5e3f7; }
+    .quality .eyebrow { color: #a9c8ff; }
+    .quality-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .quality-card { padding: 25px; border: 1px solid #ffffff30; }
+    .quality-card strong { color: #ff424b; font-size: 35px; }
+    .quality-card h3 { margin: 8px 0; }
+    .quality-card p { color: #d5e3f7; font-size: 14px; }
+
+    .calculator { background: var(--light); }
+    .calculator-box {
+      max-width: 760px;
+      margin: auto;
+      padding: 30px;
+      background: white;
+      border: 1px solid var(--border);
+      border-top: 6px solid var(--blue);
+      box-shadow: 0 15px 35px #092d600d;
+    }
+    .calculator-box h3 { margin-bottom: 20px; color: var(--blue); font-size: 24px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    label { display: block; margin-bottom: 7px; font-size: 14px; font-weight: 700; }
+    input, select, textarea {
+      width: 100%;
+      margin-bottom: 17px;
+      padding: 12px;
+      color: var(--text);
+      background: white;
+      border: 1px solid #ced9e8;
+      border-radius: 4px;
+    }
+    input:focus, select:focus, textarea:focus { outline: 2px solid #174f9f30; border-color: var(--blue); }
+    .checkbox-label { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .checkbox-label input { width: auto; margin: 0; }
+    .result {
+      display: none;
+      margin-top: 22px;
+      padding: 22px;
+      background: #edf3fc;
+      border-left: 5px solid var(--blue);
+      overflow-wrap: anywhere;
+    }
+    .result p { margin: 8px 0; }
+    .result .total { margin-top: 15px; color: var(--red); font-size: 26px; font-weight: 900; }
+    .small-note { margin-top: 16px; color: var(--muted); font-size: 12px; }
+
+    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+    .gallery-card { padding: 22px; border: 1px solid var(--border); border-bottom: 5px solid var(--blue); }
+    .gallery-card h3 { margin-bottom: 14px; color: var(--blue); }
+    .preview {
+      display: flex;
+      min-height: 230px;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 15px;
+      color: var(--muted);
+      text-align: center;
+      background:
+        linear-gradient(#174f9f0b 1px, transparent 1px),
+        linear-gradient(90deg, #174f9f0b 1px, transparent 1px),
+        #f4f7fc;
+      background-size: 25px 25px;
+    }
+    .preview img { display: block; width: 100%; max-height: 420px; object-fit: contain; }
+
+    .contact {
+      color: white;
+      background: var(--deep-blue);
+      border-top: 8px solid var(--blue);
+    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 42px; }
+    .contact h2 { margin-bottom: 18px; font-size: clamp(32px, 4vw, 45px); line-height: 1.2; }
+    .contact h2 span { color: #ff424b; }
+    .contact-description { margin-bottom: 24px; color: #d5e3f7; }
+    .contact-detail { padding: 15px 0; border-bottom: 1px solid #ffffff25; }
+    .contact-detail strong { display: block; margin-bottom: 5px; color: #a9c8ff; font-size: 12px; }
+    .contact-detail a, .contact-detail p { color: white; overflow-wrap: anywhere; }
+    .contact-form { padding: 27px; color: var(--text); background: white; border-top: 6px solid var(--red); }
+    .contact-form h3 { color: var(--deep-blue); font-size: 25px; }
+    .contact-form > p { margin: 8px 0 22px; color: var(--muted); font-size: 13px; }
+    .contact-form .btn { width: 100%; }
+
+    footer {
+      padding: 32px 15px;
+      color: white;
+      text-align: center;
+      background: #06172f;
+      border-top: 7px solid var(--blue);
+    }
+    .footer-brand { color: var(--red); font-size: 25px; font-weight: 900; }
+    .footer-brand span { color: #4e8de4; }
+    footer p { margin-top: 9px; color: #c8d7ed; font-size: 13px; }
+    footer .copyright { margin-top: 20px; }
+
+    @media (max-width: 900px) {
+      .menu-button { display: block; }
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+        padding: 22px 5%;
+        background: white;
+        border-bottom: 4px solid var(--blue);
+        box-shadow: 0 12px 25px #00000012;
+      }
+      nav.open { display: flex; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .logo-frame { max-width: 700px; margin: 8px auto; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .navbar { min-height: 74px; }
+      .brand { font-size: 23px; }
+      .brand span { font-size: 13px; }
+      .hero { padding: 43px 0 53px; }
+      .hero h1 { font-size: 44px; }
+      .hero-description { font-size: 15px; }
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons .btn { width: 100%; }
+      section:not(.hero) { padding: 53px 0; }
+      .service-grid, .quality-grid, .gallery-grid, .form-grid { grid-template-columns: 1fr; }
+      .calculator-box, .contact-form { padding: 20px; }
+      .logo-frame { padding: 4px; border-width: 3px; }
+      .preview { min-height: 190px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container navbar">
+      <a href="#start" class="brand" aria-label="RENASS TROCKENBAU – Startseite">
+        RENASS
+        <span>TROCKENBAU</span>
+      </a>
+      <button class="menu-button" id="menuButton" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+      <nav id="navigation" aria-label="Hauptnavigation">
+        <a href="#start">Startseite</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#rechner">Kostenrechner</a>
+        <a href="#projekte">Referenzen</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">TROCKENBAU · HANNOVER</div>
+          <h1>RENASS<br><span>TROCKENBAU</span></h1>
+          <p class="hero-description">
+            Ihr Ansprechpartner für abgehängte Decken, Gipskartonarbeiten,
+            Wände und Trennwände, Malerarbeiten sowie die Demontage und
+            Montage von Decken.
+          </p>
+          <div class="hero-buttons">
+            <a href="#kontakt" class="btn btn-red">Angebot anfragen</a>
+            <a href="tel:+4917630699792" class="btn btn-white">Jetzt anrufen</a>
+          </div>
+          <p class="hero-location">Kiefernpfad 9 · 30657 Hannover</p>
+        </div>
+
+        <div class="logo-frame">
+          <img src="images/renass-logo.jpg" alt="RENASS TROCKENBAU – Firmenlogo">
+        </div>
+      </div>
+    </section>
+
+    <section id="leistungen">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">UNSERE LEISTUNGEN</div>
+          <h2>Decken, Wände <span>und Innenausbau</span></h2>
+          <p>Lösungen für Renovierung, Umbau und moderne Raumgestaltung in Hannover.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">▤</div>
+            <h3>Abgehängte Decken</h3>
+            <p>Deckensysteme und Unterkonstruktionen passend zu Ihrem Raum und Projekt.</p>
+            <a href="#kontakt">Anfrage stellen →</a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">▧</div>
+            <h3>Gipskartonarbeiten</h3>
+            <p>Gipskartonplatten, Verkleidungen und weitere Trockenbauarbeiten im Innenbereich.</p>
+            <a href="#kontakt">Anfrage stellen →</a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">▥</div>
+            <h3>Wände und Trennwände</h3>
+            <p>Neue Raumaufteilungen mit Trockenbauwänden und praktischen Trennsystemen.</p>
+            <a href="#kontakt">Anfrage stellen →</a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◩</div>
+            <h3>Malerarbeiten</h3>
+            <p>Anstriche und Oberflächenarbeiten für gepflegte und ansprechende Innenräume.</p>
+            <a href="#kontakt">Anfrage stellen →</a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">↘</div>
+            <h3>Demontage alter Decken</h3>
+            <p>Rückbau vorhandener Decken als Vorbereitung für Renovierung und Umbau.</p>
+            <a href="#kontakt">Anfrage stellen →</a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">＋</div>
+            <h3>Montage neuer Decken</h3>
+            <p>Montage neuer Deckenkonstruktionen abgestimmt auf die Anforderungen Ihres Projekts.</p>
+            <a href="#kontakt">Anfrage stellen →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quality">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">VON DER PLANUNG BIS ZUR AUSFÜHRUNG</div>
+          <h2>Ihr Projekt. <span>Unser Einsatz.</span></h2>
+          <p>Teilen Sie uns Ihre Wünsche, Maße und Vorstellungen mit.</p>
+        </div>
+        <div class="quality-grid">
+          <article class="quality-card">
+            <strong>01</strong>
+            <h3>Projekt besprechen</h3>
+            <p>Beschreiben Sie die gewünschten Arbeiten und den Umfang Ihres Vorhabens.</p>
+          </article>
+          <article class="quality-card">
+            <strong>02</strong>
+            <h3>Fläche und Kosten</h3>
+            <p>Berechnen Sie die Fläche und erhalten Sie eine erste unverbindliche Schätzung.</p>
+          </article>
+          <article class="quality-card">
+            <strong>03</strong>
+            <h3>Angebot anfragen</h3>
+            <p>Senden Sie Ihre Anfrage, damit die Einzelheiten gemeinsam abgestimmt werden können.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calculator" id="rechner">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">ONLINE-KOSTENRECHNER</div>
+          <h2>Fläche und <span>Kosten berechnen</span></h2>
+          <p>Erstellen Sie eine erste unverbindliche Schätzung für Ihr Bauvorhaben.</p>
+        </div>
+
+        <div class="calculator-box">
+          <h3>Projekt-Kalkulator</h3>
+          <form id="calculatorForm">
+            <label for="workType">Art der Arbeit</label>
+            <select id="workType">
+              <option>Abgehängte Decke</option>
+              <option>Trockenbauwand</option>
+              <option>Malerarbeiten</option>
+              <option>Demontage alter Decken</option>
+              <option>Montage neuer Decken</option>
+            </select>
+
+            <div class="form-grid">
+              <div>
+                <label for="length">Länge in Metern</label>
+                <input type="number" id="length" min="0.01" step="0.01" placeholder="z. B. 5" required>
+              </div>
+              <div>
+                <label for="width">Breite oder Höhe in Metern</label>
+                <input type="number" id="width" min="0.01" step="0.01" placeholder="z. B. 4" required>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div>
+                <label for="laborPrice">Arbeitskosten pro m² (€)</label>
+                <input type="number" id="laborPrice" min="0" step="0.01" value="30" required>
+              </div>
+              <div>
+                <label for="materialPrice">Materialkosten pro m² (€)</label>
+                <input type="number" id="materialPrice" min="0" step="0.01" value="15" required>
+              </div>
+            </div>
+
+            <label class="checkbox-label">
+              <input type="checkbox" id="reserve" checked>
+              10 % Materialreserve berücksichtigen
+            </label>
+            <button type="submit" class="btn btn-red">Kosten berechnen</button>
+          </form>
+
+          <div class="result" id="result" aria-live="polite"></div>
+          <button type="button" id="emailEstimate" class="btn btn-blue" style="width:100%;margin-top:15px">
+            Kostenschätzung per E-Mail anfragen
+          </button>
+          <p class="small-note">
+            Die Preise sind Beispielwerte und können angepasst werden. Das Ergebnis ist unverbindlich.
+            Die tatsächlichen Kosten hängen vom Projekt und den vereinbarten Leistungen ab.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projekte">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">UNSERE PROJEKTE</div>
+          <h2>Vorher <span>und Nachher</span></h2>
+          <p>Wählen Sie Fotos aus, um Arbeiten vor und nach der Renovierung direkt zu vergleichen.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <h3>Vorher</h3>
+            <label for="beforeImage">Foto auswählen</label>
+            <input type="file" id="beforeImage" accept="image/*">
+            <div class="preview" id="beforePreview">Foto vor der Renovierung wird hier angezeigt.</div>
+          </div>
+          <div class="gallery-card">
+            <h3>Nachher</h3>
+            <label for="afterImage">Foto auswählen</label>
+            <input type="file" id="afterImage" accept="image/*">
+            <div class="preview" id="afterPreview">Foto nach der Renovierung wird hier angezeigt.</div>
+          </div>
+        </div>
+        <p class="small-note">Die ausgewählten Fotos werden in dieser Version nur in Ihrem aktuellen Browser angezeigt und nicht online gespeichert.</p>
+      </div>
+    </section>
+
+    <section class="contact" id="kontakt">
+      <div class="container contact-grid">
+        <div>
+          <div class="eyebrow">KONTAKT</div>
+          <h2>Planen wir<br><span>Ihr Projekt.</span></h2>
+          <p class="contact-description">
+            Sie planen Arbeiten an Decken, Wänden, Trennwänden oder Malerarbeiten?
+            Senden Sie uns Ihre Anfrage.
+          </p>
+
+          <div class="contact-detail">
+            <strong>TELEFON</strong>
+            <a href="tel:+4917630699792">0176 30699792</a>
+          </div>
+          <div class="contact-detail">
+            <strong>E-MAIL</strong>
+            <a href="mailto:aatifgeddo@gmail.com">aatifgeddo@gmail.com</a>
+          </div>
+          <div class="contact-detail">
+            <strong>ADRESSE</strong>
+            <p>Kiefernpfad 9, 30657 Hannover</p>
+          </div>
+
+          <a class="btn btn-red" href="https://wa.me/4917630699792" target="_blank" rel="noopener" style="margin-top:25px">
+            Über WhatsApp kontaktieren
+          </a>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <h3>Angebot anfragen</h3>
+          <p>Füllen Sie das Formular aus. Anschließend wird eine E-Mail mit Ihren Angaben vorbereitet.</p>
+
+          <label for="customerName">Ihr Name *</label>
+          <input id="customerName" autocomplete="name" required placeholder="Vor- und Nachname">
+
+          <label for="customerPhone">Telefonnummer</label>
+          <input id="customerPhone" type="tel" autocomplete="tel" placeholder="Ihre Telefonnummer">
+
+          <label for="customerEmail">E-Mail-Adresse</label>
+          <input id="customerEmail" type="email" autocomplete="email" placeholder="name@beispiel.de">
+
+          <label for="customerService">Gewünschte Leistung</label>
+          <select id="customerService">
+            <option>Abgehängte Decken</option>
+            <option>Gipskartonarbeiten</option>
+            <option>Wände und Trennwände</option>
+            <option>Malerarbeiten</option>
+            <option>Alte Decken demontieren</option>
+            <option>Neue Decken montieren</option>
+            <option>Sonstige Arbeiten</option>
+          </select>
+
+          <label for="customerMessage">Projektbeschreibung *</label>
+          <textarea id="customerMessage" rows="5" required placeholder="Beschreiben Sie Ihr Projekt, die Maße und Ihre Wünsche."></textarea>
+
+          <button class="btn btn-red" type="submit">Anfrage per E-Mail vorbereiten</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">RENASS <span>TROCKENBAU</span></div>
+    <p>Decken · Wände · Gipskarton · Malerarbeiten</p>
+    <p>Kiefernpfad 9 · 30657 Hannover</p>
+    <p><a href="tel:+4917630699792">0176 30699792</a> · <a href="mailto:aatifgeddo@gmail.com">aatifgeddo@gmail.com</a></p>
+    <p class="copyright">© <span id="year"></span> RENASS TROCKENBAU. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script>
+    "use strict";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const menuButton = document.getElementById("menuButton");
+    const navigation = document.getElementById("navigation");
+
+    menuButton.addEventListener("click", function () {
+      const isOpen = navigation.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Menü schließen" : "Menü öffnen");
+    });
+
+    navigation.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navigation.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Menü öffnen");
+      });
+    });
+
+    let lastEstimate = null;
+
+    function formatEuro(value) {
+      return value.toLocaleString("de-DE", {
+        style: "currency",
+        currency: "EUR"
+      });
+    }
+
+    function addResultLine(parent, label, value) {
+      const paragraph = document.createElement("p");
+      const strong = document.createElement("strong");
+      paragraph.append(document.createTextNode(label + ": "));
+      strong.textContent = value;
+      paragraph.append(strong);
+      parent.append(paragraph);
+    }
+
+    document.getElementById("calculatorForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const length = Number(document.getElementById("length").value);
+      const width = Number(document.getElementById("width").value);
+      const laborPrice = Number(document.getElementById("laborPrice").value);
+      const materialPrice = Number(document.getElementById("materialPrice").value);
+      const includeReserve = document.getElementById("reserve").checked;
+      const workType = document.getElementById("workType").value;
+
+      if (
+        !Number.isFinite(length) || !Number.isFinite(width) ||
+        !Number.isFinite(laborPrice) || !Number.isFinite(materialPrice) ||
+        length <= 0 || width <= 0 || laborPrice < 0 || materialPrice < 0
+      ) {
+        alert("Bitte überprüfen Sie Ihre Eingaben. Maße müssen größer als null sein; Preise dürfen nicht negativ sein.");
+        return;
+      }
+
+      const area = length * width;
+      const materialArea = area * (includeReserve ? 1.10 : 1);
+      const laborCost = area * laborPrice;
+      const materialCost = materialArea * materialPrice;
+      const total = laborCost + materialCost;
+
+      lastEstimate = {
+        workType, length, width, area, materialArea, laborCost, materialCost, total
+      };
+
+      const result = document.getElementById("result");
+      result.replaceChildren();
+
+      const title = document.createElement("h3");
+      title.textContent = "Ihre unverbindliche Kostenschätzung";
+      result.append(title);
+
+      addResultLine(result, "Leistung", workType);
+      addResultLine(result, "Berechnete Fläche", area.toFixed(2) + " m²");
+      addResultLine(result, "Materialfläche inklusive Reserve", materialArea.toFixed(2) + " m²");
+      addResultLine(result, "Arbeitskosten", formatEuro(laborCost));
+      addResultLine(result, "Materialkosten", formatEuro(materialCost));
+
+      const totalLine = document.createElement("p");
+      totalLine.className = "total";
+      totalLine.textContent = "Geschätzte Gesamtkosten: " + formatEuro(total);
+      result.append(totalLine);
+      result.style.display = "block";
+    });
+
+    document.getElementById("emailEstimate").addEventListener("click", function () {
+      if (!lastEstimate) {
+        alert("Bitte berechnen Sie zuerst die Kosten.");
+        return;
+      }
+
+      const estimate = lastEstimate;
+      const body = [
+        "Guten Tag RENASS TROCKENBAU,",
+        "",
+        "ich bitte um Prüfung meiner unverbindlichen Kostenschätzung.",
+        "",
+        "Leistung: " + estimate.workType,
+        "Maße: " + estimate.length + " x " + estimate.width + " m",
+        "Fläche: " + estimate.area.toFixed(2) + " m²",
+        "Arbeitskosten: " + formatEuro(estimate.laborCost),
+        "Materialkosten: " + formatEuro(estimate.materialCost),
+        "Geschätzte Gesamtkosten: " + formatEuro(estimate.total),
+        "",
+        "Bitte kontaktieren Sie mich zur weiteren Abstimmung.",
+        "Mit freundlichen Grüßen"
+      ].join("\n");
+
+      const mailto = "mailto:aatifgeddo@gmail.com?subject=" +
+        encodeURIComponent("Kostenschätzung - RENASS TROCKENBAU") +
+        "&body=" + encodeURIComponent(body);
+
+      window.location.href = mailto;
+    });
+
+    function setupImagePreview(inputId, previewId, altText) {
+      const input = document.getElementById(inputId);
+      input.addEventListener("change", function () {
+        const file = input.files && input.files[0];
+        if (!file) return;
+
+        if (!file.type.startsWith("image/")) {
+          alert("Bitte wählen Sie eine gültige Bilddatei aus.");
+          input.value = "";
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function () {
+          const image = document.createElement("img");
+          image.src = reader.result;
+          image.alt = altText;
+          document.getElementById(previewId).replaceChildren(image);
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    setupImagePreview("beforeImage", "beforePreview", "Foto vor der Renovierung");
+    setupImagePreview("afterImage", "afterPreview", "Foto nach der Renovierung");
+
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("customerPhone").value.trim();
+      const email = document.getElementById("customerEmail").value.trim();
+      const service = document.getElementById("customerService").value;
+      const message = document.getElementById("customerMessage").value.trim();
+
+      const body = [
+        "Guten Tag RENASS TROCKENBAU,",
+        "",
+        "Name: " + name,
+        "Telefon: " + (phone || "Nicht angegeben"),
+        "E-Mail: " + (email || "Nicht angegeben"),
+        "Gewünschte Leistung: " + service,
+        "",
+        "Projektbeschreibung:",
+        message,
+        "",
+        "Mit freundlichen Grüßen",
+        name
+      ].join("\n");
+
+      const mailto = "mailto:aatifgeddo@gmail.com?subject=" +
+        encodeURIComponent("Projektanfrage - RENASS TROCKENBAU") +
+        "&body=" + encodeURIComponent(body);
+
+      window.location.href = mailto;
+    });
+  </script>
+</body>
+</html>
