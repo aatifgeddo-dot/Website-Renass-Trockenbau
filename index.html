@@ -1,1 +1,607 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b2f78">
+<meta name="description" content="RENASS TROCKENBAU in Hannover. Trockenbau, Decken, Trennwände, Gipskarton, Innenausbau und Malerarbeiten.">
+<title>RENASS TROCKENBAU | Hannover</title>
+
+<style>
+:root {
+  --blue: #0b2f78;
+  --blue2: #174e99;
+  --red: #d7192d;
+  --bg: #f3f6fb;
+  --white: #fff;
+  --text: #17233b;
+  --muted: #64748b;
+  --border: #dce4f0;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+a { text-decoration: none; }
+.topbar {
+  background: var(--blue);
+  color: white;
+  padding: 8px 5%;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.topbar a { color: white; font-weight: bold; }
+header {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 15px #102c6210;
+}
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.brand {
+  color: var(--blue);
+  font-weight: 900;
+  font-size: 20px;
+}
+.brand span { color: var(--red); }
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.navlinks a {
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 14px;
+}
+.navlinks a:hover { color: var(--red); }
+.menu-button {
+  display: none;
+  background: var(--blue);
+  color: white;
+  border: 0;
+  border-radius: 7px;
+  padding: 9px 13px;
+  font-size: 21px;
+}
+.button {
+  display: inline-block;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 18px;
+  background: var(--red);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px 5px 5px 0;
+}
+.button:hover { opacity: .88; }
+.button-blue { background: var(--blue); }
+.hero {
+  background: linear-gradient(120deg, #061b49, #1355a7);
+  color: white;
+  padding: 75px 6%;
+}
+.hero-inner {
+  max-width: 1150px;
+  margin: auto;
+}
+.eyebrow {
+  color: #ffb7bf;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.hero h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1.08;
+  margin: 14px 0;
+}
+.hero h1 span { color: #ff4b5d; }
+.hero p {
+  font-size: 18px;
+  max-width: 690px;
+  color: #e0eaff;
+}
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  margin-top: 28px;
+}
+.stats strong { display: block; font-size: 18px; }
+.stats small { color: #d6e4ff; }
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 22px;
+  scroll-margin-top: 85px;
+}
+.section-heading { margin-bottom: 25px; }
+.section-heading h2 {
+  font-size: clamp(27px, 4vw, 38px);
+  color: var(--blue);
+  line-height: 1.2;
+  margin: 8px 0;
+}
+.section-heading p { color: var(--muted); }
+.section-heading .eyebrow { color: var(--red); }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 8px 25px #0b2f7808;
+}
+.card h3 { color: var(--blue); margin-top: 10px; }
+.card p { color: var(--muted); }
+.service-icon {
+  font-size: 30px;
+  color: var(--red);
+}
+.tools {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+label {
+  display: block;
+  margin: 12px 0 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+input, textarea, select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #cbd6e5;
+  border-radius: 7px;
+  background: white;
+  color: var(--text);
+  font: inherit;
+}
+textarea { min-height: 95px; resize: vertical; }
+.result {
+  background: #eaf1ff;
+  border: 1px solid #d2e0fb;
+  color: var(--blue);
+  border-radius: 9px;
+  padding: 15px;
+  margin-top: 15px;
+  overflow-wrap: anywhere;
+}
+.result strong { font-size: 23px; }
+.note { font-size: 13px; color: var(--muted); }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.gallery img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  margin-top: 12px;
+  object-fit: contain;
+  background: #e8edf5;
+  border-radius: 8px;
+}
+.contact-box {
+  background: var(--blue);
+  color: white;
+  border-radius: 16px;
+  padding: 28px;
+}
+.contact-box h2 { color: white; }
+.contact-box p { color: #e1eaff; }
+footer {
+  background: #061b49;
+  color: white;
+  text-align: center;
+  padding: 28px 18px;
+}
+footer a { color: white; }
+@media(max-width:850px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .navlinks { gap: 10px; }
+  .navlinks a { font-size: 13px; }
+}
+@media(max-width:650px) {
+  .nav { flex-wrap: wrap; }
+  .menu-button { display: block; }
+  .navlinks {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .navlinks.open { display: flex; }
+  .navlinks a { padding: 10px 0; font-size: 15px; }
+  .grid, .tools, .gallery { grid-template-columns: 1fr; }
+  .hero { padding: 48px 22px; }
+  section { padding: 42px 18px; }
+  .topbar { font-size: 12px; }
+}
+@media print {
+  body * { visibility: hidden; }
+  #rechnung, #rechnung * { visibility: visible; }
+  #rechnung {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .no-print { display: none !important; }
+}
+</style>
+</head>
+
+<body>
+<div class="topbar">
+  <span>RENASS TROCKENBAU · Hannover · Niedersachsen</span>
+  <a href="tel:+4917630699702">☎ 0176 30699702</a>
+</div>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#start">
+      <span>RENASS</span> TROCKENBAU
+    </a>
+    <button class="menu-button" id="menuButton"
+      aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <nav class="navlinks" id="navlinks">
+      <a href="#start">Startseite</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#rechner">Rechner</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#rechnung">Rechnung</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="start">
+  <div class="hero-inner">
+    <div class="eyebrow">Ihr Partner für Innenausbau in Hannover</div>
+    <h1>Räume neu denken.<br><span>Sauber bauen.</span></h1>
+    <p>
+      Professioneller Trockenbau, abgehängte Decken,
+      Gipskartonplatten, Trennwände, Innenausbau und Malerarbeiten.
+    </p>
+    <a class="button" href="#kontakt">Projekt anfragen →</a>
+    <a class="button button-blue" href="#leistungen">Leistungen ansehen</a>
+    <div class="stats">
+      <div><strong>Decken & Wände</strong><small>Sauber ausgeführt</small></div>
+      <div><strong>Innenausbau</strong><small>Individuelle Lösungen</small></div>
+      <div><strong>Hannover</strong><small>Regionaler Service</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="leistungen">
+  <div class="section-heading">
+    <div class="eyebrow">Unsere Arbeit</div>
+    <h2>Leistungen für Ihre Räume</h2>
+    <p>Handwerkliche Arbeiten für private und gewerbliche Projekte.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="service-icon">▤</div>
+      <h3>Abgehängte Decken</h3>
+      <p>Deckenunterkonstruktionen und Gipskarton-Deckensysteme.</p>
+    </article>
+    <article class="card"><div class="service-icon">▥</div>
+      <h3>Trennwände</h3>
+      <p>Neue Raumaufteilungen und moderne Trockenbauwände.</p>
+    </article>
+    <article class="card"><div class="service-icon">◇</div>
+      <h3>Gipskartonarbeiten</h3>
+      <p>Montage, Beplankung, Fugen und Spachtelarbeiten.</p>
+    </article>
+    <article class="card"><div class="service-icon">✦</div>
+      <h3>Malerarbeiten</h3>
+      <p>Innenanstriche und gepflegte Oberflächen.</p>
+    </article>
+    <article class="card"><div class="service-icon">⌂</div>
+      <h3>Innenausbau</h3>
+      <p>Praktische Lösungen für Wohn- und Arbeitsräume.</p>
+    </article>
+    <article class="card"><div class="service-icon">✓</div>
+      <h3>Renovierung</h3>
+      <p>Renovierungsarbeiten nach individueller Absprache.</p>
+    </article>
+  </div>
+</section>
+
+<section id="rechner">
+  <div class="section-heading">
+    <div class="eyebrow">Projektplanung</div>
+    <h2>Flächen- und Kostenrechner</h2>
+    <p>Unverbindliche Schätzung für Ihre erste Planung.</p>
+  </div>
+  <div class="tools">
+    <div class="card">
+      <h3>📐 Fläche berechnen</h3>
+      <label for="laenge">Länge in Metern</label>
+      <input id="laenge" type="number" min="0" step="0.01" value="5">
+      <label for="breite">Breite oder Höhe in Metern</label>
+      <input id="breite" type="number" min="0" step="0.01" value="4">
+      <label for="anzahl">Anzahl gleicher Flächen</label>
+      <input id="anzahl" type="number" min="1" step="1" value="1">
+      <label for="abzug">Abzüge für Öffnungen in m²</label>
+      <input id="abzug" type="number" min="0" step="0.1" value="0">
+      <button class="button" id="areaButton">Fläche berechnen</button>
+      <div class="result" id="areaResult">20,00 m²</div>
+    </div>
+
+    <div class="card">
+      <h3>🧱 Material und Kosten</h3>
+      <label for="materialPrice">Materialpreis pro m² (€)</label>
+      <input id="materialPrice" type="number" min="0" value="12">
+      <label for="laborPrice">Arbeitskosten pro m² (€)</label>
+      <input id="laborPrice" type="number" min="0" value="35">
+      <label for="reserve">Materialreserve (%)</label>
+      <input id="reserve" type="number" min="0" max="50" value="10">
+      <label for="otherCost">Weitere Kosten (€)</label>
+      <input id="otherCost" type="number" min="0" value="0">
+      <button class="button" id="costButton">Kosten berechnen</button>
+      <div class="result" id="costResult">Geschätzte Kosten erscheinen hier.</div>
+      <p class="note">Die Werte sind Schätzungen und kein verbindliches Angebot.</p>
+    </div>
+  </div>
+</section>
+
+<section id="galerie">
+  <div class="section-heading">
+    <div class="eyebrow">Unsere Projekte</div>
+    <h2>Vorher und Nachher</h2>
+    <p>Wählen Sie Bilder zur Vorschau auf diesem Gerät aus.</p>
+  </div>
+  <div class="gallery">
+    <div class="card">
+      <h3>Vorher</h3>
+      <label for="beforePhoto">Vorher-Foto auswählen</label>
+      <input id="beforePhoto" type="file" accept="image/*">
+      <img id="beforePreview" alt="Vorher-Foto Vorschau">
+    </div>
+    <div class="card">
+      <h3>Nachher</h3>
+      <label for="afterPhoto">Nachher-Foto auswählen</label>
+      <input id="afterPhoto" type="file" accept="image/*">
+      <img id="afterPreview" alt="Nachher-Foto Vorschau">
+    </div>
+  </div>
+  <p class="note">Die Bilder werden nicht automatisch ins Internet hochgeladen.</p>
+</section>
+
+<section id="rechnung">
+  <div class="section-heading">
+    <div class="eyebrow">Verwaltung</div>
+    <h2>Rechnung vorbereiten</h2>
+    <p>Erstellen Sie einen Entwurf zum Drucken oder Speichern als PDF.</p>
+  </div>
+  <div class="card">
+    <label for="invoiceNumber">Rechnungsnummer</label>
+    <input id="invoiceNumber" value="RT-2026-001">
+    <label for="customer">Kundenname</label>
+    <input id="customer" placeholder="Name des Kunden">
+    <label for="customerAddress">Kundenanschrift</label>
+    <textarea id="customerAddress" placeholder="Straße, PLZ, Ort"></textarea>
+    <label for="description">Beschreibung der Leistung</label>
+    <textarea id="description" placeholder="z. B. Montage einer abgehängten Decke"></textarea>
+    <label for="quantity">Menge in m²</label>
+    <input id="quantity" type="number" min="0" step="0.01" value="20">
+    <label for="unitPrice">Preis pro m² netto (€)</label>
+    <input id="unitPrice" type="number" min="0" step="0.01" value="47">
+    <label for="vat">Umsatzsteuer</label>
+    <select id="vat">
+      <option value="19">19 %</option>
+      <option value="0">0 % – nur wenn zulässig</option>
+    </select>
+    <button class="button" id="invoiceButton">Rechnung erstellen</button>
+    <div class="result" id="invoiceResult">Die Rechnung erscheint hier.</div>
+    <button class="button button-blue" id="printButton">Drucken / als PDF speichern</button>
+    <p class="note">Bitte prüfen Sie die gesetzlich erforderlichen Angaben vor dem Versand.</p>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="section-heading">
+    <div class="eyebrow">Kontakt</div>
+    <h2>Wir freuen uns auf Ihre Anfrage</h2>
+  </div>
+  <div class="contact-box">
+    <h2>RENASS TROCKENBAU</h2>
+    <p>Hannover und Umgebung</p>
+    <p>Telefon: 0176 30699702</p>
+    <a class="button" href="tel:+4917630699702">Jetzt anrufen</a>
+    <a class="button" href="https://wa.me/4917630699702" target="_blank" rel="noopener">WhatsApp öffnen</a>
+  </div>
+  <div class="card" style="margin-top:20px">
+    <h3>Projektanfrage</h3>
+    <label for="requestName">Ihr Name</label>
+    <input id="requestName" placeholder="Vor- und Nachname">
+    <label for="requestContact">Telefon oder E-Mail</label>
+    <input id="requestContact" placeholder="Ihre Kontaktdaten">
+    <label for="requestText">Beschreibung Ihres Projekts</label>
+    <textarea id="requestText" placeholder="Welche Arbeiten benötigen Sie?"></textarea>
+    <button class="button button-blue" id="requestButton">Anfrage über WhatsApp vorbereiten</button>
+    <p class="note">Die Nachricht wird erst nach Ihrer Bestätigung über WhatsApp gesendet.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>RENASS TROCKENBAU</strong>
+  <p>Decken · Wände · Gipskarton · Malerarbeiten</p>
+  <p>Hannover · Niedersachsen</p>
+  <p>© <span id="year"></span> RENASS TROCKENBAU</p>
+  <p class="note">Vor Veröffentlichung Impressum und Datenschutz ergänzen.</p>
+</footer>
+
+<script>
+"use strict";
+
+const get = id => document.getElementById(id);
+const number = id => Math.max(0, Number(get(id).value) || 0);
+
+function euro(value) {
+  return value.toLocaleString("de-DE", {
+    style: "currency",
+    currency: "EUR"
+  });
+}
+
+get("year").textContent = new Date().getFullYear();
+
+get("menuButton").addEventListener("click", function () {
+  const menu = get("navlinks");
+  const open = menu.classList.toggle("open");
+  this.setAttribute("aria-expanded", String(open));
+  this.textContent = open ? "✕" : "☰";
+});
+
+get("navlinks").querySelectorAll("a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    get("navlinks").classList.remove("open");
+    get("menuButton").textContent = "☰";
+    get("menuButton").setAttribute("aria-expanded", "false");
+  });
+});
+
+function calculateArea() {
+  const area = Math.max(
+    0,
+    number("laenge") *
+    number("breite") *
+    Math.max(1, Math.floor(number("anzahl"))) -
+    number("abzug")
+  );
+  get("areaResult").textContent =
+    area.toLocaleString("de-DE", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }) + " m²";
+  return area;
+}
+
+function calculateCost() {
+  const area = calculateArea();
+  const reserve = Math.min(50, number("reserve")) / 100;
+  const materialArea = area * (1 + reserve);
+  const material = materialArea * number("materialPrice");
+  const labor = area * number("laborPrice");
+  const other = number("otherCost");
+  const total = material + labor + other;
+
+  get("costResult").innerHTML =
+    "Fläche: <strong>" + area.toFixed(2) + " m²</strong><br>" +
+    "Materialbedarf inkl. Reserve: " + materialArea.toFixed(2) + " m²<br>" +
+    "Materialkosten: " + euro(material) + "<br>" +
+    "Arbeitskosten: " + euro(labor) + "<br>" +
+    "Weitere Kosten: " + euro(other) + "<br>" +
+    "<strong>Gesamt netto: " + euro(total) + "</strong>";
+  return area;
+}
+
+get("areaButton").addEventListener("click", calculateArea);
+get("costButton").addEventListener("click", calculateCost);
+
+function showPhoto(inputId, imageId) {
+  get(inputId).addEventListener("change", function () {
+    const file = this.files && this.files[0];
+    if (!file) return;
+    if (!file.type.startsWith("image/")) {
+      alert("Bitte eine Bilddatei auswählen.");
+      this.value = "";
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      get(imageId).src = event.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+showPhoto("beforePhoto", "beforePreview");
+showPhoto("afterPhoto", "afterPreview");
+
+get("invoiceButton").addEventListener("click", function () {
+  const customer = get("customer").value.trim() || "Kunde";
+  const address = get("customerAddress").value.trim();
+  const description = get("description").value.trim() || "Trockenbauarbeiten";
+  const quantity = number("quantity");
+  const unitPrice = number("unitPrice");
+  const vat = Number(get("vat").value);
+  const net = quantity * unitPrice;
+  const tax = net * vat / 100;
+  const total = net + tax;
+
+  get("invoiceResult").textContent =
+    "RENASS TROCKENBAU | Rechnung " + get("invoiceNumber").value +
+    " | Kunde: " + customer +
+    " | Anschrift: " + address +
+    " | Leistung: " + description +
+    " | Netto: " + euro(net) +
+    " | Umsatzsteuer: " + euro(tax) +
+    " | Gesamt: " + euro(total);
+});
+
+get("printButton").addEventListener("click", function () {
+  window.print();
+});
+
+get("requestButton").addEventListener("click", function () {
+  const name = get("requestName").value.trim();
+  const contact = get("requestContact").value.trim();
+  const details = get("requestText").value.trim();
+
+  if (!details) {
+    alert("Bitte beschreiben Sie Ihr Projekt.");
+    return;
+  }
+
+  const message =
+    "Projektanfrage RENASS TROCKENBAU\n" +
+    "Name: " + name + "\n" +
+    "Kontakt: " + contact + "\n" +
+    "Projekt: " + details;
+
+  const url = "https://wa.me/4917630699702?text=" +
+    encodeURIComponent(message);
+  window.open(url, "_blank", "noopener");
+});
+
+calculateArea();
+calculateCost();
+</script>
+</body>
+</html>
+
