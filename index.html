@@ -2,6 +2,39 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <style>
+:root {
+  --blue: #0b2f78;
+  --blue2: #174e99;
+  --red: #d7192d;
+  --bg: #f3f6fb;
+  --white: #fff;
+  --text: #17233b;
+  --muted: #64748b;
+  --border: #dce4f0;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+a { text-decoration: none; }
+.topbar {
+  background: var(--blue);
+  color: white;
+  padding: 8px 5%;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+</style>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0b2f78">
