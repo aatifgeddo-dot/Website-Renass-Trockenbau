@@ -1,3 +1,4 @@
+<img width="1264" height="843" alt="IMG_0614" src="https://github.com/user-attachments/assets/7bef09b3-a4d0-4384-9019-b846f679db2c" />
 
 # 🏗️ RENASS - DECKEN WÄNDE MALER (Meisterbetrieb)
 
