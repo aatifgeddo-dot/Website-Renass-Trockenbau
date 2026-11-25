@@ -55,8 +55,9 @@ Here on GitHub, I am learning to code and managing my personal projects. My goal
 Dies ist ein privates Lern-Repository. Die Datenverarbeitung (z.B. Server-Logfiles) erfolgt automatisch durch den Host dieser Plattform (**GitHub Inc.**). Ich selbst speichere oder sammle keine personenbezogenen Daten von Besuchern dieses Wikis.
 
 *This is a private learning repository. Data processing (e.g. server log files) is carried out automatically by the host of this platform (**GitHub Inc.**). I do not store or collect any personal data from visitors to this wiki.*
-## Technischer Hinweis (Entwicklung)
-* Hauptdate: 'index.html' </footer>© 2026 Website RENASS TROCKENBAU (Meisterbetrieb).  Alle Rechte Vorbehalten.</p>                        <p< <a href=""importssum.html">Importssum</a>
-</a> href="datenschutz.html">Aatenschutzerklärung</a> </p< </footer>
+## Technischer Hinweis (Entwicklung)href
+* Hauptdate: 'index.html' </footer>© 2026 Website RENASS TROCKENBAU (Meisterbetrieb).  Alle Rechte Vorbehalten.</p>
+</p>
+href="datenschutz.html">Aatenschutzerklärung</a> </p< </footer>
 
  GitHub | Impressum | Datenschutz
