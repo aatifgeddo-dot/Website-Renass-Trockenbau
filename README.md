@@ -56,6 +56,6 @@ Dies ist ein privates Lern-Repository. Die Datenverarbeitung (z.B. Server-Logfil
 
 *This is a private learning repository. Data processing (e.g. server log files) is carried out automatically by the host of this platform (**GitHub Inc.**). I do not store or collect any personal data from visitors to this wiki.*
 ## Technischer Hinweis (Entwicklung)
-* Hauptdate: 'index.html' </footer>© 2026 Website RENASS TROCKENBAU (Meisterbetrieb).  Alle Rechte Vorbehal
+* Hauptdate: "index.html" </footer>© 2026 Website RENASS TROCKENBAU (Meisterbetrieb).  Alle Rechte Vorbehal
 
  GitHub | Impressum | Datenschutz
