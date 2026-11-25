@@ -58,6 +58,8 @@ Dies ist ein privates Lern-Repository. Die Datenverarbeitung (z.B. Server-Logfil
 ## Technischer Hinweis (Entwicklung)href
 * Hauptdate: 'index.html' </footer>© 2026 Website RENASS TROCKENBAU (Meisterbetrieb).  Alle Rechte Vorbehalten.</p>
 </p>
-href="datenschutz.html">Aatenschutzerklärung</a> </p< </footer>
+href="datenschutz.html">Aatenschutzerklärung</a>
+</p>
+</footer>
 
  GitHub | Impressum | Datenschutz
