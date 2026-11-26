@@ -60,7 +60,7 @@ Dies ist ein privates Lern-Repository. Die Datenverarbeitung (z.B. Server-Logfil
 </footer
   <p>© 2026 Website RENASS TROCKENBAU (Meisterbetrieb). Alle Rechte Vorbehalten
     <p>
-      <a href="impressum.html">Impressum</a>a>
+      <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutzerklärung</a>a>
       <p>
       </footer>
