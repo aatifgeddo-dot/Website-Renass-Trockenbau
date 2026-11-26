@@ -58,7 +58,7 @@ Dies ist ein privates Lern-Repository. Die Datenverarbeitung (z.B. Server-Logfil
 ## Technischer Hinweis (Entwicklung)
 * Hauptdate: index.html </footer>© 2026 Website RENASS TROCKENBAU (Meisterbetrieb).  Alle Rechte Vorbehalten
 * **Status & Technologien:** Aktuell in Entwicklung (HTML5/CSS3) - Fokus reponsives Webdesign für Mobile Endgeräte.
-* **Hinweis zur Nutzug:** Dieses Repository deint ausschließlich als LERN- und Entwicklungsprojeket; alle Inhalte sind vorläufig.
+* **Hinweis zur Nutzug:** Dieses Repository dient ausschließlich als Lern- und Entwicklungsprojeket; alle Inhalte sind vorläufig.
   
 
  GitHub | Impressum | Datenschutz
