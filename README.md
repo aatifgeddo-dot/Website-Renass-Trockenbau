@@ -56,8 +56,8 @@ Dies ist ein privates Lern-Repository. Die Datenverarbeitung (z.B. Server-Logfil
 
 *This is a private learning repository. Data processing (e.g. server log files) is carried out automatically by the host of this platform (**GitHub Inc.**). I do not store or collect any personal data from visitors to this wiki.*
 ## Technischer Hinweis (Entwicklung)
-* Hauptdate: index.html 
-</footer
+* Hauptdatei: index.html 
+</footer>
   <p>© 2026 Website RENASS TROCKENBAU (Meisterbetrieb). Alle Rechte Vorbehalten
     <p>
       <a href="impressum.html">Impressum</a>
@@ -65,8 +65,8 @@ Dies ist ein privates Lern-Repository. Die Datenverarbeitung (z.B. Server-Logfil
       <p>
       </footer>
       
-* **Status & Technologien:** Aktuell in Entwicklung (HTML5/CSS3) - Fokus reponsives Webdesign für Mobile Endgeräte.
-* **Hinweis zur Nutzug:** Dieses Repository dient ausschließlich als Lern- und Entwicklungsprojekt; alle Inhalte sind vorläufig.
+* **Status & Technologien:** Aktuell in Entwicklung (HTML5/CSS3) - Fokus Reponsives Webdesign für mobile Endgeräte.
+* **Hinweis zur Nutzung:** Dieses Repository dient ausschließlich als Lern- und Entwicklungsprojekt; alle Inhalte sind vorläufig.
   
 
  GitHub | Impressum | Datenschutz
