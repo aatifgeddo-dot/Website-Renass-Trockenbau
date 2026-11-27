@@ -69,4 +69,4 @@ Dies ist ein privates Lern-Repository. Die Datenverarbeitung (z.B. Server-Logfil
 * **Hinweis zur Nutzung:** Dieses Repository dient ausschließlich als Lern- und Entwicklungsprojekt; alle Inhalte sind vorläufig.
   
 
- GitHub | Impressum | Datenschutz
+   GitHub | Impressum | Datenschutz
